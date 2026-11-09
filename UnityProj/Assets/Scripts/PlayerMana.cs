@@ -33,7 +33,7 @@ public class PlayerMana : MonoBehaviour
 
     void Magic()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (Keyboard.current.eKey.wasPressedThisFrame && mana >=10)
         {
             mana -= 10;
 

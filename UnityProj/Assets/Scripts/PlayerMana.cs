@@ -34,19 +34,18 @@ public class PlayerMana : MonoBehaviour
     void Magic()
     {
         if (Keyboard.current.eKey.wasPressedThisFrame && mana >=10)
+
+            // Changed this to wasPressedThisFrame as isPressedThisFrame continuously ran.
         {
             mana -= 10;
 
             magicEffect.Play();
 
-            UpdateManaText();
+            // Summons the Particle Effect
+
+            ManaText.text = "Press E to use Magic!\nMana: " + mana;
         }
     }
-     void UpdateManaText()
-    { 
-        ManaText.text = "Press E to use Magic!\nMana: " + mana;
-
-    }
-
+  
 }
 

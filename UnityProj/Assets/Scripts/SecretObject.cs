@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class hiddenTrap : MonoBehaviour
 {
-    public GameObject trap;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject hiddenObject;
+
+    
     void Start()
     {
         
@@ -17,7 +18,6 @@ public class hiddenTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //gameObject.SetActive(true);
-        trap.SetActive(true);
+        hiddenObject.SetActive(true);
     }
 }

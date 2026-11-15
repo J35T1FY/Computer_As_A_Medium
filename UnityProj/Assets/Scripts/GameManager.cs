@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject tryHarderUI;
+    public GameObject stopThatUI;
 
     private bool isGameOver = false;
+    private bool isWarning = false;
     void Start()
     {
 
@@ -20,6 +22,19 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         GameEnd();
+        StartCoroutine(Warning());
+    }
+    IEnumerator Warning()
+    {
+        if (playerHealth.health == 50)
+        {
+            isWarning = true;
+            stopThatUI.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            stopThatUI.SetActive(false);
+            isWarning = false;
+
+        }
     }
 
     void GameEnd()

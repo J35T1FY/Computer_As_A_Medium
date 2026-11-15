@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (Keyboard.current.fKey.isPressed) //NOTE: K key is the SWORD button
+        if (Keyboard.current.fKey.isPressed) //NOTE: F key is the SWORD button
         {
             animator.SetBool("attack", true);
         }

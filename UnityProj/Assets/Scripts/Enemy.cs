@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
         {
             enemyHealth -= 10;
         }
+        if (other.CompareTag("Bullet"))
+        {
+            enemyHealth -= 10;
+            Destroy(other.gameObject);
+        }
     }
 
     void Death()
